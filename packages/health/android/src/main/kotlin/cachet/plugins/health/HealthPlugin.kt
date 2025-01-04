@@ -671,6 +671,7 @@ class HealthPlugin(private var channel: MethodChannel? = null) :
         // Store the result to be called in [onHealthConnectPermissionCallback]
         mResult = result
         isReplySubmitted = false
+        permList.add("android.permission.health.READ_HEALTH_DATA_IN_BACKGROUND")
         healthConnectRequestPermissionsLauncher!!.launch(permList.toSet())
     }
 
